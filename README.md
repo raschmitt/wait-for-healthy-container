@@ -1,12 +1,22 @@
-# wait-for-healthy-container
-Simple bash script to wait for a Docker container till the health check returned 'healthy' or the timeout exceeded.
+A simple action to wait for a Docker container till the health check returned ''healthy'' or the timeout is exceeded.
 
-## Usage
+# Usage
 
-Usage: `wait-for-healthy-container.sh <container name> [timeout]`
+```yaml
+- name: 'Wait until the container is healthy'
+  uses: raschmitt/wait-for-healthy-container/@v1
+  with:
+    container-name: name
+    timeout: 120
+```
 
-ie. `wait-for-healthy-container.sh my_app_container 120`
+# Input Options
 
-## Description
+| Input | Description | Default | Required |
+| ----- | ----- | ----- | ----- |
+| container-name | Name of the container to be waited | | `true` |
+| timeout | Limit of seconds to wait for the container to enter a "healthy" state | 120 | `false` |
 
-Script waits till the health check state of a container is 'healthy'. For implementing the Docker health check, please checkout [the Dockerfile reference](https://docs.docker.com/engine/reference/builder/#healthcheck) or [the Docker run reference](https://docs.docker.com/engine/reference/run/#healthcheck).
+# Output Actions
+
+There are no output options for this action.
