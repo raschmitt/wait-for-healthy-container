@@ -11,5 +11,5 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: wait-for-healthy-container.sh ${{ inputs.container-name }} ${{ inputs.timeout }}
+    - run: ./wait-for-healthy-container.sh ${{ inputs.container-name }} ${{ inputs.timeout }}
       shell: bash 
