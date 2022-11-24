@@ -11,5 +11,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: ./wait-for-healthy-container.sh ${{ inputs.container-name }} ${{ inputs.timeout }}
+    - run: echo "${{ github.action_path }}" >> $GITHUB_PATH
+      shell: bash
+    - run: wait-for-healthy-container.sh ${{ inputs.container-name }} ${{ inputs.timeout }}
       shell: bash 
