@@ -4,7 +4,7 @@ A simple action to wait for a Docker container untill the health check returns `
 
 ```yaml
 - name: 'Wait until the container is healthy'
-  uses: raschmitt/wait-for-healthy-container/@v1
+  uses: raschmitt/wait-for-healthy-container/@master
   with:
     container-name: name
     timeout: 120
